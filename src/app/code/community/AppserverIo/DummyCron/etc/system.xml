@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * PHP version 5
+ *
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-apps/magento-cron
+ * @link      http://www.appserver.io
+ */
+
+/**
+ * Configuration for backend integrated forms.
+ *
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-apps/magento-cron
+ * @link      http://www.appserver.io
+ */
+ -->
+<config>
+    <tabs>
+        <appserverio>
+            <label>AppserverIo</label>
+            <sort_order>301</sort_order>
+        </appserverio>
+    </tabs>
+    <sections>
+        <appserverio_dummycron translate="label" module="appserverio_dummycron">
+            <label>DummyCron</label>
+            <tab>appserverio</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label,comment">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                    </fields>
+                </general>
+                <logging translate="label">
+                    <label>Logging</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>12</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable>
+                            <label>Enable Logging for Module</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable>
+                    </fields>
+                </logging>
+            </groups>
+        </appserverio_dummycron>
+    </sections>
+</config>

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * PHP version 5
+ *
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-apps/magento-cron
+ * @link      http://www.appserver.io
+ */
+
+/**
+ * Extension configuration file.
+ *
+ * @author    Tim Wagner <tw@appserver.io>
+ * @copyright 2015 TechDivision GmbH <info@appserver.io>
+ * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @link      https://github.com/appserver-io-apps/magento-cron
+ * @link      http://www.appserver.io
+ */
+ -->
+<config>
+    <modules>
+        <AppserverIo_DummyCron>
+            <version>0.1.0</version>
+        </AppserverIo_DummyCron>
+    </modules>
+    <frontend>
+        <translate>
+            <modules>
+                <appserverio_dummycron>
+                    <files>
+                        <default>AppserverIo_DummyCron.csv</default>
+                    </files>
+                </appserverio_dummycron>
+            </modules>
+        </translate>
+        <routers>
+            <appserverio_dummycron>
+                <use>standard</use>
+                <args>
+                    <module>AppserverIo_DummyCron</module>
+                    <frontName>appserverio_dummycron</frontName>
+                </args>
+            </appserverio_dummycron>
+        </routers>
+        <layout>
+            <updates>
+                <appserverio_dummycron>
+                    <file>appserverio/dummycron.xml</file>
+                </appserverio_dummycron>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <appserverio_dummycron>
+                <use>admin</use>
+                <args>
+                    <module>AppserverIo_DummyCron</module>
+                    <frontName>admin_appserverio_dummycron</frontName>
+                </args>
+            </appserverio_dummycron>
+        </routers>
+    </admin>
+    <adminhtml>
+        <translate>
+            <modules>
+                <appserverio_dummycron>
+                    <files>
+                        <default>AppserverIo_DummyCron.csv</default>
+                    </files>
+                </appserverio_dummycron>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <appserverio_dummycron translate="title" module="appserverio_dummycron">
+                                            <title>appserverio_dummycron</title>
+                                            <sort_order>50</sort_order>
+                                        </appserverio_dummycron>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <appserverio_dummycron>
+                    <file>appserverio/dummycron.xml</file>
+                </appserverio_dummycron>
+            </updates>
+        </layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <appserverio_dummycron>
+                <class>AppserverIo_DummyCron_Model</class>
+                <resourceModel>appserverio_dummycron_resource</resourceModel>
+            </appserverio_dummycron>
+            <appserverio_dummycron_resource>
+                <class>AppserverIo_DummyCron_Model_Resource</class>
+                <entities/>
+            </appserverio_dummycron_resource>
+        </models>
+        <resources>
+            <appserverio_dummycron_setup>
+                <setup>
+                    <module>AppserverIo_DummyCron</module>
+                    <class>AppserverIo_DummyCron_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </appserverio_dummycron_setup>
+            <appserverio_dummycron_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </appserverio_dummycron_write>
+            <appserverio_dummycron_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </appserverio_dummycron_read>
+        </resources>
+        <blocks>
+            <appserverio_dummycron>
+                <class>AppserverIo_DummyCron_Block</class>
+            </appserverio_dummycron>
+        </blocks>
+        <helpers>
+            <appserverio_dummycron>
+                <class>AppserverIo_DummyCron_Helper</class>
+            </appserverio_dummycron>
+        </helpers>
+    </global>
+    <default>
+        <appserverio_dummycron>
+            <general>
+                <enable>1</enable>
+            </general>
+            <logging>
+                <enable>0</enable>
+            </logging>
+        </appserverio_dummycron>
+    </default>
+    <crontab>
+        <jobs>
+            <appserverio_dummycron>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>appserverio_dummycron/cron::doSomething</model>
+                </run>
+            </appserverio_dummycron>
+        </jobs>
+    </crontab>
+</config>
