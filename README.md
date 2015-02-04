@@ -32,20 +32,15 @@ $ cp /tmp/magento-cron/src/app/META-INF/classes/AppserverIo/Apps/Magento/Cron/Se
      META-INF/classes/AppserverIo/Apps/Magento/Cron/SessionBeans
 ```
 
-Then [restart](http://appserver.io/get-started/documentation/basic-usage.html) the application server. The
-Magento CRON jobs will now be invoked every minute.
+Then [restart](http://appserver.io/get-started/documentation/basic-usage.html) the application server, open `http://127.0.0.1:9080/magento-cron/admin` in your favorite browser, login to the Magento backend and clear the Magento cache. The Magento CRON jobs will now be invoked every minute.
 
 ### Deploy the SLSB/Servlet together with a dummy extension
 
 The second option is a bit more complicated, as it uses [ANT](http://ant.apache.org/) to deploy the `SLSB`, a
 Servlet, that allows you to invoke the Magento CRON in your browser, and a dummy Magento extension, that will
-be invoked by the application servers [Timer-Service](http://appserver.io/get-started/documentation/timer-service.html)
-the `SLSB` is bound to.
+be invoked by the application servers [Timer-Service](http://appserver.io/get-started/documentation/timer-service.html) the `SLSB` is bound to.
 
-Change into the working copy with `$ cd /tmp/magento-cron`, then invoke `ANT` with `ant deploy`. Use your
-favorite browser and open `http://127.0.0.1:9080/magento-cron/admin` and login to the Magento backend. Then
-clear the Magento cache. The Magento extension, the `SLSB` and the `Servlet` are now ready. The dummy extensions
-purpose is simple to log a message whenever the CRON invokes the method declared in the extensions `config.xml`.
+Change into the working copy with `$ cd /tmp/magento-cron`, then invoke `ANT` with `ant deploy`, restart the application server and finally clear the Magento cache. The Magento extension, the `SLSB` and the `Servlet` are now ready. The dummy extensions purpose is simple to log a message whenever the CRON invokes the method declared in the extensions `config.xml`.
 
 You also have the possiblity to invoke the CRON process manually. Simple use your favorite browser, request
 `http://127.0.0.1:9080/magento-cron//invokeCron.do`, and check the Magento `system.log`, assumed you've activated
