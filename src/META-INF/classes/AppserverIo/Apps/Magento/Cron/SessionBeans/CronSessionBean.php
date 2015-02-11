@@ -89,7 +89,6 @@ class CronSessionBean implements TimedObjectInterface
     {
 
         try {
-
             // backup the old working directory
             $oldDir = getcwd();
 

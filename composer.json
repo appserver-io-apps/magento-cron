@@ -6,7 +6,9 @@
 		"appserver-io/build" : "0.2.*",
 		"appserver-io-psr/epb" : "0.3.*",
 		"appserver-io-psr/servlet" : "0.7.*",
-		"appserver-io-psr/application" : "0.4.*"
+		"appserver-io-psr/application" : "0.4.*",
+        "appserver-io/phar" : "0.1.*",
+        "squizlabs/php_codesniffer" : "dev-master as 2.1.0"
 	},
 	"autoload" : {
 		"psr-0" : {
