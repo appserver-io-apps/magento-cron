@@ -1,5 +1,7 @@
 # appserver.io Magento CRON Implementation
 
+[![Latest Stable Version](https://poser.pugx.org/appserver-io-app/magento-cron/v/stable.png)](https://packagist.org/packages/appserver-io-app/magento-cron) [![Total Downloads](https://poser.pugx.org/appserver-io-app/magento-cron/downloads.png)](https://packagist.org/packages/appserver-io-app/magento-cron) [![License](https://poser.pugx.org/appserver-io-app/magento-cron/license.png)](https://packagist.org/packages/appserver-io-app/magento-cron) [![Build Status](https://travis-ci.org/appserver-io-app/magento-cron.png)](https://travis-ci.org/appserver-io-app/magento-cron) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/appserver-io-app/magento-cron/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/appserver-io-app/magento-cron/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/appserver-io-app/magento-cron/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/appserver-io-app/magento-cron/?branch=master)
+
 This example describes how to execute Magento CRON jobs with a system CRON.
 
 Why should/can i do this? When you run Magento on a Debian Linux for example, you've to register the `cron.sh`
@@ -9,7 +11,7 @@ life will a bit less complicated, because you're able to execute the Magento CRO
 
 ## Installation
 
-To do this, assumed you've installed appserver.io and your Magento instance will be devlivered by appserver.io,
+To do this, assumed you've installed appserver.io and your Magento instance will be delivered by appserver.io,
 you have two installation options.
 
 For both options, you need the sources of this repository. So clone it, open a commandline, change into your 
@@ -42,7 +44,7 @@ be invoked by the application servers [Timer-Service](http://appserver.io/get-st
 
 Change into the working copy with `$ cd /tmp/magento-cron`, then invoke `ANT` with `ant deploy`, restart the application server and finally clear the Magento cache. The Magento extension, the `SLSB` and the `Servlet` are now ready. The dummy extensions purpose is simple to log a message whenever the CRON invokes the method declared in the extensions `config.xml`.
 
-You also have the possiblity to invoke the CRON process manually. Simple use your favorite browser, request
+You also have the possibility to invoke the CRON process manually. Simple use your favorite browser, request
 `http://127.0.0.1:9080/magento-cron//invokeCron.do`, and check the Magento `system.log`, assumed you've activated
 logging in Magento backend.
 
