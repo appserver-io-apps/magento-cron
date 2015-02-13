@@ -1,13 +1,13 @@
 {
 	"name" : "appserver-io-apps/magento-cron",
 	"description" : "CRON implementation based on appserver.io Timer-Service and a SLSB with a @Schedule annotation",
-	"version" : "0.1.0",
+	"version" : "1.0.0",
 	"require-dev" : {
-		"appserver-io/build" : "0.2.*",
-		"appserver-io-psr/epb" : "0.3.*",
-		"appserver-io-psr/servlet" : "0.7.*",
-		"appserver-io-psr/application" : "0.4.*",
-        "appserver-io/phar" : "0.1.*",
+		"appserver-io/build" : "~1.0",
+		"appserver-io-psr/epb" : "~1.0",
+		"appserver-io-psr/servlet" : "~1.0",
+		"appserver-io-psr/application" : "~1.0",
+        "appserver-io/phar" : "~1.0",
         "squizlabs/php_codesniffer" : "dev-master as 2.1.0"
 	},
 	"autoload" : {
